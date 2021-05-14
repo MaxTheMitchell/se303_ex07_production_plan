@@ -34,6 +34,13 @@ class ProvinceTest < Minitest::Test
       assert_equal(-26, @asia.shortfall)
       assert_equal(-10, @asia.profit)
     end
+
+    it "empty string demand" do 
+    rescue ex
+      @asia.demand = ""
+      assert_raises(NoMethodError) {@asia.shortfall}
+      assert_nil(@asia.profit)
+    end
   end
 
   describe 'no producers' do
