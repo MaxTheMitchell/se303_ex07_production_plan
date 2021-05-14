@@ -7,14 +7,14 @@ require_relative '../lib/data'
 class ProvinceTest < Minitest::Test
 
   describe "province" do 
+    before { @asia = Province.new(sample_province_data) } 
+
     it "shortfall" do
-      asia = Province.new(sample_province_data)
-      assert_equal(5, asia.shortfall)
+      assert_equal(5, @asia.shortfall)
     end
 
     it "profit" do 
-      asia = Province.new(sample_province_data)
-      assert_equal(230, asia.profit)
+      assert_equal(230, @asia.profit)
     end
   end
 end
